@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "id": 1,
+      "title": "Central Station - Northline",
+      "description": "Frequent services between Central and Northline.",
+      "status": "Active",
+      "image": "https://picsum.photos/300/200?random=1"
+    },
+    {
+      "id": 2,
+      "title": "Seaside Express",
+      "description": "Limited-stop express service to the coast.",
+      "status": "Upcoming",
+      "image": "https://picsum.photos/300/200?random=2"
+    },
+    {
+      "id": 3,
+      "title": "Airport Shuttle",
+      "description": "Runs every 30 mins; luggage storage available.",
+      "status": "Active",
+      "image": "https://picsum.photos/300/200?random=3"
+    }
+  ]
+}
