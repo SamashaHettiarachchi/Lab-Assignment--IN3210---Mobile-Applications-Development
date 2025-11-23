@@ -20,38 +20,34 @@ import { lightTheme, darkTheme } from "../utils/theme";
 const ProfileScreen: React.FC = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state: RootState) => state.auth.user);
-  const favourites = useAppSelector((state: RootState) => state.items.favourites);
-  const isDarkMode = useAppSelector((state: RootState) => state.theme.isDarkMode);
-  
+  const favourites = useAppSelector(
+    (state: RootState) => state.items.favourites
+  );
+  const isDarkMode = useAppSelector(
+    (state: RootState) => state.theme.isDarkMode
+  );
+
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
 
   const theme = isDarkMode ? darkTheme : lightTheme;
 
   const handleEditProfile = () => {
-    Alert.alert(
-      "Edit Profile",
-      "Profile editing feature coming soon!",
-      [{ text: "OK" }]
-    );
+    Alert.alert("Edit Profile", "Profile editing feature coming soon!", [
+      { text: "OK" },
+    ]);
   };
 
   const handleSavedAddresses = () => {
-    Alert.alert(
-      "Saved Addresses",
-      "You have no saved addresses yet.",
-      [{ text: "OK" }]
-    );
+    Alert.alert("Saved Addresses", "You have no saved addresses yet.", [
+      { text: "OK" },
+    ]);
   };
 
   const handlePaymentMethods = () => {
-    Alert.alert(
-      "Payment Methods",
-      "No payment methods added.",
-      [
-        { text: "Cancel", style: "cancel" },
-        { text: "Add Card", onPress: () => {} }
-      ]
-    );
+    Alert.alert("Payment Methods", "No payment methods added.", [
+      { text: "Cancel", style: "cancel" },
+      { text: "Add Card", onPress: () => {} },
+    ]);
   };
 
   const handlePrivacy = () => {
@@ -81,7 +77,11 @@ const ProfileScreen: React.FC = () => {
   const menuItems = [
     { icon: "user", label: "Edit Profile", action: handleEditProfile },
     { icon: "map-pin", label: "Saved Addresses", action: handleSavedAddresses },
-    { icon: "credit-card", label: "Payment Methods", action: handlePaymentMethods },
+    {
+      icon: "credit-card",
+      label: "Payment Methods",
+      action: handlePaymentMethods,
+    },
     { icon: "shield", label: "Privacy & Security", action: handlePrivacy },
     { icon: "help-circle", label: "Help & Support", action: handleHelp },
     { icon: "info", label: "About", action: handleAbout },
@@ -89,7 +89,10 @@ const ProfileScreen: React.FC = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <StatusBar barStyle={theme.statusBar} backgroundColor={theme.statusBarBg} />
+      <StatusBar
+        barStyle={theme.statusBar}
+        backgroundColor={theme.statusBarBg}
+      />
       <LinearGradient
         colors={theme.headerBackground as any}
         style={styles.headerGradient}
@@ -111,19 +114,30 @@ const ProfileScreen: React.FC = () => {
       </LinearGradient>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.statsContainer, { backgroundColor: theme.cardBackground }]}>
+        <View
+          style={[
+            styles.statsContainer,
+            { backgroundColor: theme.cardBackground },
+          ]}
+        >
           <View style={styles.statBox}>
             <Feather name="star" size={24} color="#1976D2" />
-            <Text style={[styles.statNumber, { color: theme.text }]}>{favourites.length}</Text>
+            <Text style={[styles.statNumber, { color: theme.text }]}>
+              {favourites.length}
+            </Text>
             <Text style={styles.statLabel}>Favourites</Text>
           </View>
-          <View style={[styles.statDivider, { backgroundColor: theme.border }]} />
+          <View
+            style={[styles.statDivider, { backgroundColor: theme.border }]}
+          />
           <View style={styles.statBox}>
             <Feather name="map" size={24} color="#1976D2" />
             <Text style={[styles.statNumber, { color: theme.text }]}>12</Text>
             <Text style={styles.statLabel}>Trips</Text>
           </View>
-          <View style={[styles.statDivider, { backgroundColor: theme.border }]} />
+          <View
+            style={[styles.statDivider, { backgroundColor: theme.border }]}
+          />
           <View style={styles.statBox}>
             <Feather name="award" size={24} color="#1976D2" />
             <Text style={[styles.statNumber, { color: theme.text }]}>5</Text>
@@ -132,28 +146,44 @@ const ProfileScreen: React.FC = () => {
         </View>
 
         <View style={styles.section}>
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>Settings</Text>
-          
+          <Text style={[styles.sectionTitle, { color: theme.text }]}>
+            Settings
+          </Text>
+
           {/* Dark Mode Toggle */}
-          <View style={[styles.menuItem, { backgroundColor: theme.cardBackground }]}>
+          <View
+            style={[styles.menuItem, { backgroundColor: theme.cardBackground }]}
+          >
             <View style={styles.menuIconContainer}>
-              <Feather name={isDarkMode ? "moon" : "sun"} size={22} color="#1976D2" />
+              <Feather
+                name={isDarkMode ? "moon" : "sun"}
+                size={22}
+                color="#1976D2"
+              />
             </View>
-            <Text style={[styles.menuLabel, { color: theme.text }]}>Dark Mode</Text>
+            <Text style={[styles.menuLabel, { color: theme.text }]}>
+              Dark Mode
+            </Text>
             <Switch
               value={isDarkMode}
-              onValueChange={() => { dispatch(toggleTheme()); }}
+              onValueChange={() => {
+                dispatch(toggleTheme());
+              }}
               trackColor={{ false: "#E0E0E0", true: "#81C784" }}
               thumbColor={isDarkMode ? "#4CAF50" : "#BDBDBD"}
             />
           </View>
-          
+
           {/* Notifications Toggle */}
-          <View style={[styles.menuItem, { backgroundColor: theme.cardBackground }]}>
+          <View
+            style={[styles.menuItem, { backgroundColor: theme.cardBackground }]}
+          >
             <View style={styles.menuIconContainer}>
               <Feather name="bell" size={22} color="#1976D2" />
             </View>
-            <Text style={[styles.menuLabel, { color: theme.text }]}>Notifications</Text>
+            <Text style={[styles.menuLabel, { color: theme.text }]}>
+              Notifications
+            </Text>
             <Switch
               value={notificationsEnabled}
               onValueChange={setNotificationsEnabled}
@@ -165,14 +195,19 @@ const ProfileScreen: React.FC = () => {
           {menuItems.map((item, index) => (
             <TouchableOpacity
               key={index}
-              style={[styles.menuItem, { backgroundColor: theme.cardBackground }]}
+              style={[
+                styles.menuItem,
+                { backgroundColor: theme.cardBackground },
+              ]}
               onPress={item.action}
               activeOpacity={0.7}
             >
               <View style={styles.menuIconContainer}>
                 <Feather name={item.icon as any} size={22} color="#1976D2" />
               </View>
-              <Text style={[styles.menuLabel, { color: theme.text }]}>{item.label}</Text>
+              <Text style={[styles.menuLabel, { color: theme.text }]}>
+                {item.label}
+              </Text>
               <Feather name="chevron-right" size={20} color="#BDBDBD" />
             </TouchableOpacity>
           ))}

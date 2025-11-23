@@ -37,7 +37,8 @@ const FavouritesScreen: React.FC = () => {
       >
         <Text style={styles.headerTitle}>My Favourites</Text>
         <Text style={styles.headerSubtitle}>
-          {favouriteRoutes.length} {favouriteRoutes.length === 1 ? "route" : "routes"} saved
+          {favouriteRoutes.length}{" "}
+          {favouriteRoutes.length === 1 ? "route" : "routes"} saved
         </Text>
       </LinearGradient>
       {favouriteRoutes.length === 0 ? (

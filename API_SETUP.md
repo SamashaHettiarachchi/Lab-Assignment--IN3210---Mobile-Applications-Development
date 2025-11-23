@@ -9,10 +9,12 @@ This app now uses **DummyJSON** (https://dummyjson.com) - a free REST API for te
 **Login URL:** `https://dummyjson.com/auth/login`
 
 **Demo Credentials:**
+
 - Username: `emilys`
 - Password: `emilyspass`
 
 **Other Available Users:**
+
 - Username: `michaelw` / Password: `michaelwpass`
 - Username: `sophiab` / Password: `sophiabpass`
 - Username: `jamesd` / Password: `jamesdpass`
@@ -22,6 +24,7 @@ Full list: https://dummyjson.com/users
 ### Data Endpoint
 
 **Products API (mapped to Transport Routes):**
+
 - URL: `https://dummyjson.com/products`
 - Returns product data that we transform into transport routes
 - No authentication required
@@ -29,6 +32,7 @@ Full list: https://dummyjson.com/users
 ### How It Works
 
 1. **Login Flow:**
+
    ```
    POST https://dummyjson.com/auth/login
    Body: { username: "emilys", password: "emilyspass" }
@@ -36,6 +40,7 @@ Full list: https://dummyjson.com/users
    ```
 
 2. **Fetch Routes:**
+
    ```
    GET https://dummyjson.com/products?limit=20
    Returns: Product data transformed to transport routes
@@ -53,17 +58,17 @@ Full list: https://dummyjson.com/users
 ✅ **No Setup Required** - No need to run json-server locally  
 ✅ **Real Authentication** - Actual login API with tokens  
 ✅ **Always Available** - Hosted online, works on any device  
-✅ **Perfect for Demos** - No localhost issues on physical devices  
+✅ **Perfect for Demos** - No localhost issues on physical devices
 
 ### Advantages Over json-server
 
-| Feature | DummyJSON | json-server |
-|---------|-----------|-------------|
-| Setup | None | Requires local server |
-| Mobile Testing | Works everywhere | localhost issues |
-| Authentication | Real API | Fake/manual |
-| Deployment | Already hosted | Need to host |
-| Assignment Compliance | ✅ Public API | ⚠️ Local only |
+| Feature               | DummyJSON        | json-server           |
+| --------------------- | ---------------- | --------------------- |
+| Setup                 | None             | Requires local server |
+| Mobile Testing        | Works everywhere | localhost issues      |
+| Authentication        | Real API         | Fake/manual           |
+| Deployment            | Already hosted   | Need to host          |
+| Assignment Compliance | ✅ Public API    | ⚠️ Local only         |
 
 ### Testing
 

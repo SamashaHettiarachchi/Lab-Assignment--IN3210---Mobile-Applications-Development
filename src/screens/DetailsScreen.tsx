@@ -46,7 +46,11 @@ const DetailsScreen: React.FC<DetailsScreenProps> = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image source={{ uri: item.image }} style={styles.image} />
@@ -68,7 +72,14 @@ const DetailsScreen: React.FC<DetailsScreenProps> = ({ route }) => {
         </View>
         <View style={styles.content}>
           <Text style={styles.title}>{item.title}</Text>
-          <View style={[styles.statusBadge, item.status === "Active" ? styles.activeStatus : styles.upcomingStatus]}>
+          <View
+            style={[
+              styles.statusBadge,
+              item.status === "Active"
+                ? styles.activeStatus
+                : styles.upcomingStatus,
+            ]}
+          >
             <Feather
               name={item.status === "Active" ? "check-circle" : "clock"}
               size={16}
@@ -79,7 +90,7 @@ const DetailsScreen: React.FC<DetailsScreenProps> = ({ route }) => {
           <View style={styles.divider} />
           <Text style={styles.sectionTitle}>Description</Text>
           <Text style={styles.description}>{item.description}</Text>
-          
+
           <View style={styles.divider} />
           <Text style={styles.sectionTitle}>Schedule Information</Text>
           <View style={styles.infoCard}>
@@ -87,14 +98,18 @@ const DetailsScreen: React.FC<DetailsScreenProps> = ({ route }) => {
               <Feather name="clock" size={20} color="#1976D2" />
               <View style={styles.infoTextContainer}>
                 <Text style={styles.infoLabel}>Frequency</Text>
-                <Text style={styles.infoText}>{item.frequency || "Every 15 mins"}</Text>
+                <Text style={styles.infoText}>
+                  {item.frequency || "Every 15 mins"}
+                </Text>
               </View>
             </View>
             <View style={styles.infoItem}>
               <Feather name="calendar" size={20} color="#1976D2" />
               <View style={styles.infoTextContainer}>
                 <Text style={styles.infoLabel}>Operating Hours</Text>
-                <Text style={styles.infoText}>{item.operatingHours || "5:00 AM - 11:00 PM"}</Text>
+                <Text style={styles.infoText}>
+                  {item.operatingHours || "5:00 AM - 11:00 PM"}
+                </Text>
               </View>
             </View>
             <View style={styles.infoItem}>

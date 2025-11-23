@@ -35,10 +35,12 @@ const LoginScreen: React.FC = () => {
 
   const handleSubmit = async (values: LoginFormValues) => {
     try {
-      await dispatch(login({
-        username: values.username.trim(),
-        password: values.password,
-      })).unwrap();
+      await dispatch(
+        login({
+          username: values.username.trim(),
+          password: values.password,
+        })
+      ).unwrap();
     } catch (err: any) {
       Alert.alert(
         "Login Failed",
@@ -65,9 +67,7 @@ const LoginScreen: React.FC = () => {
         <Text style={styles.subtitle}>Your Journey Starts Here</Text>
       </LinearGradient>
       <View style={styles.container}>
-        <Text style={styles.helpText}>
-          Demo: emilys / emilyspass
-        </Text>
+        <Text style={styles.helpText}>Demo: emilys / emilyspass</Text>
         <Formik
           initialValues={defaultValues}
           validationSchema={loginValidationSchema}
@@ -85,7 +85,12 @@ const LoginScreen: React.FC = () => {
               <View style={styles.fieldGroup}>
                 <Text style={styles.label}>Username</Text>
                 <View style={styles.inputContainer}>
-                  <Feather name="user" size={20} color="#757575" style={styles.inputIcon} />
+                  <Feather
+                    name="user"
+                    size={20}
+                    color="#757575"
+                    style={styles.inputIcon}
+                  />
                   <TextInput
                     placeholder="Enter username"
                     style={styles.input}
@@ -104,7 +109,12 @@ const LoginScreen: React.FC = () => {
               <View style={styles.fieldGroup}>
                 <Text style={styles.label}>Password</Text>
                 <View style={styles.inputContainer}>
-                  <Feather name="lock" size={20} color="#757575" style={styles.inputIcon} />
+                  <Feather
+                    name="lock"
+                    size={20}
+                    color="#757575"
+                    style={styles.inputIcon}
+                  />
                   <TextInput
                     placeholder="Enter password"
                     style={styles.input}

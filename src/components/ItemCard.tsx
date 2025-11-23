@@ -19,12 +19,21 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, onPress }) => (
       />
     </View>
     <View style={styles.body}>
-      <Text style={styles.title} numberOfLines={1}>{item.title}</Text>
+      <Text style={styles.title} numberOfLines={1}>
+        {item.title}
+      </Text>
       <Text numberOfLines={2} style={styles.description}>
         {item.description}
       </Text>
       <View style={styles.statusRow}>
-        <View style={[styles.statusBadge, item.status === "Active" ? styles.activeStatus : styles.upcomingStatus]}>
+        <View
+          style={[
+            styles.statusBadge,
+            item.status === "Active"
+              ? styles.activeStatus
+              : styles.upcomingStatus,
+          ]}
+        >
           <Feather
             name={item.status === "Active" ? "check-circle" : "clock"}
             size={14}

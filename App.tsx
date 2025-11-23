@@ -30,11 +30,12 @@ const AppBootstrap = () => {
   useEffect(() => {
     const hydrateState = async () => {
       try {
-        const [storedUser, storedFavourites, storedDarkMode] = await Promise.all([
-          AsyncStorage.getItem("user"),
-          AsyncStorage.getItem("favourites"),
-          AsyncStorage.getItem("darkMode"),
-        ]);
+        const [storedUser, storedFavourites, storedDarkMode] =
+          await Promise.all([
+            AsyncStorage.getItem("user"),
+            AsyncStorage.getItem("favourites"),
+            AsyncStorage.getItem("darkMode"),
+          ]);
 
         if (storedUser) {
           const parsedUser = JSON.parse(storedUser);
@@ -57,7 +58,7 @@ const AppBootstrap = () => {
         } else {
           dispatch(restoreFavourites([]));
         }
-        
+
         if (storedDarkMode) {
           const isDark = JSON.parse(storedDarkMode);
           dispatch(setTheme(isDark));
