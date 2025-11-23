@@ -149,30 +149,6 @@ interface TransportRoute {
 - **UI Libraries**: Expo Linear Gradient, Feather Icons
 - **Styling**: StyleSheet with responsive design
 
-## Assignment Requirements (95/95 Marks)
-
-### Core Requirements (85 marks)
-- ✅ **Authentication (15)** – DummyJSON API login with Formik + Yup validation, token persistence
-- ✅ **Navigation (15)** – Stack Navigator for auth, Bottom Tab Navigator (3 tabs: Home, Favourites, Profile)
-- ✅ **API Integration (15)** – DummyJSON products transformed to 30 transport routes with schedules
-- ✅ **State Management (15)** – Redux Toolkit with 3 slices (auth, items, theme), async thunks
-- ✅ **Favourites (10)** – Toggle favourites, AsyncStorage persistence, dedicated Favourites screen
-- ✅ **UI/UX (15)** – LinearGradient headers, shadows, animations, Feather icons, responsive cards
-
-### Bonus Feature (10 marks)
-- ✅ **Dark Mode Toggle** – Manual theme toggle in Profile screen with AsyncStorage persistence
-
-### Features Implemented
-- 5 Screens: Login, Home, Details, Favourites, Profile
-- Transport schedules with frequency, operating hours, and route types
-- Pull-to-refresh functionality
-- Loading states and error handling
-- Empty state handling
-- User statistics in Profile
-- Gradient overlays and status badges
-- Type-safe Redux hooks
-- Clean code architecture
-
 ## Demo Credentials
 
 ```
